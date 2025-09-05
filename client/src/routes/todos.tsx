@@ -45,7 +45,7 @@ function RouteComponent() {
     <div className="flex flex-col items-center p-10">
       {isError && <ErrorAlert />}
       <div className="space-y-3 p-6">
-        {isLoading && Array.from({ length: 5 }).map(() => <Loading />)}
+        {isLoading && Array.from({ length: 2 }).map(() => <Loading />)}
         {data &&
           data.map((todo) => (
             <div className="flex items-center gap-2">

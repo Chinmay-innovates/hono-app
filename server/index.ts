@@ -8,7 +8,7 @@ const app = new Hono().basePath('/api')
 app.use(logger())
 
 const router = app
-app.on(["POST", "GET"], "/auth/**", (c) => auth.handler(c.req.raw))
+.on(["POST", "GET"], "/auth/**", (c) => auth.handler(c.req.raw))
 .get('/todos', async (c) => {
   try {
     const todos = await getTodos()
