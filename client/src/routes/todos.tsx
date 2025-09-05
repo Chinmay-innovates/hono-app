@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query'
 import { createFileRoute } from '@tanstack/react-router'
-import { CircleX } from 'lucide-react'
 
+import { ErrorAlert } from '@/components/Auth'
 import type { AppType } from '@server/index'
 import { hc } from 'hono/client'
 
@@ -32,18 +32,9 @@ function RouteComponent() {
     ))
   }
 
-  const ErrorAlert = () => {
-    return (
-      <div className="alert alert-error" role="alert">
-        <CircleX />
-        <span>{error?.message}</span>
-      </div>
-    )
-  }
-
   return (
     <div className="flex flex-col items-center p-10">
-      {isError && <ErrorAlert />}
+      {isError && <ErrorAlert message={error?.message} />}
       <div className="space-y-3 p-6">
         {isLoading && Array.from({ length: 2 }).map(() => <Loading />)}
         {data &&
