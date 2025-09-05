@@ -1,0 +1,11 @@
+services:
+ postgres:
+  image: postgres:17-alpine
+  restart: unless-stopped
+  container_name: hono_todos
+  environment:
+   - POSTGRES_USER=postgres
+   - POSTGRES_PASSWORD=postgres
+   - POSTGRES_DB=todos
+  ports:
+   - "5432:5432"

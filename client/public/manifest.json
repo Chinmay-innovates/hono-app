@@ -1,0 +1,6 @@
+{
+  "short_name": "Hono Todo App",
+  "name": "Hono Todo App",
+  "start_url": ".",
+  "display": "standalone"
+}
