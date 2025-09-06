@@ -9,7 +9,15 @@ function ErrorAlert({ message }: { message: string }) {
   )
 }
 
-function SubmitButton({ loading }: { loading: boolean }) {
+function SubmitButton({
+  loading,
+  foregroundText,
+  loadingText,
+}: {
+  loading: boolean
+  foregroundText: string
+  loadingText: string
+}) {
   return (
     <div className="card-actions mt-4">
       <button
@@ -20,10 +28,10 @@ function SubmitButton({ loading }: { loading: boolean }) {
         {loading ? (
           <>
             <span className="loading loading-spinner loading-sm text-primary"></span>
-            <span className="ml-2 text-primary">Creating account...</span>
+            <span className="ml-2 text-primary">{loadingText}</span>
           </>
         ) : (
-          'Sign Up'
+          foregroundText
         )}
       </button>
     </div>
