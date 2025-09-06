@@ -213,7 +213,11 @@ function SignupPage() {
               },
             )}
 
-            <SubmitButton loading={loading} />
+            <SubmitButton
+              loading={loading}
+              foregroundText="Sign Up"
+              loadingText="Creating account..."
+            />
 
             <div className="mt-6 text-center">
               <p className="text-base-content/70">
